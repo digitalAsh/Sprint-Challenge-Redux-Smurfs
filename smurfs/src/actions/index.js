@@ -3,6 +3,7 @@
   Be sure to export each action type so you can pull it into your reducer
 */
 import axios from 'axios';
+
 export const FETCH_DATA_START = 'FETCH_DATA_START'
 export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS'
 export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE'
@@ -22,6 +23,15 @@ export const getSmurfs = () => dispatch => {
       dispatch({ type: FETCH_DATA_FAILURE, payload: err.response });
     });
 };
+
+export const ADD_SMURF = 'ADD_SMURF';
+
+export const addSmurf = smurf => {
+  return {
+    type: ADD_SMURF,
+    payload: smurf
+  };
+}
 
 
 /*

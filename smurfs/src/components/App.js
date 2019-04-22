@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getSmurfs } from '../actions';
+
 import './App.css';
+import AddSmurf from './AddSmurf';
 /*
  to wire this component up you're going to need a few things.
  I'll let you do this part on your own. 
@@ -9,13 +11,6 @@ import './App.css';
  `How do I ensure that my component links the state to props?`
  */
 class App extends Component {
-  // state = {
-  //   newSmurf: {
-  //     name: '',
-  //     age: Number,
-  //     height: '',
-  //     id: Number
-  //   }
 
    componentDidMount() {
         this.props.getSmurfs();
@@ -31,7 +26,7 @@ class App extends Component {
             {smurf.height}
           </h3>
         ))}
-        
+        <AddSmurf />
       </div>
     );
   }

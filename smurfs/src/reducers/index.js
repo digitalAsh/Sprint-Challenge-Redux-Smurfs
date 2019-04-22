@@ -4,7 +4,8 @@
 import { 
   FETCH_DATA_START, 
   FETCH_DATA_SUCCESS,
-  FETCH_DATA_FAILURE
+  FETCH_DATA_FAILURE,
+  ADD_SMURF
 } from '../actions';
 
 
@@ -45,6 +46,14 @@ const reducer = (state = initialState, action) => {
         fetchingSmurfs: false,
         error: action.payload
       }; 
+    case ADD_SMURF:
+      return {
+        ...state,
+        smurfs: [
+          ...state.smurfs,
+            action.payload 
+        ]
+      }   
     default:
       return state;     
   }
