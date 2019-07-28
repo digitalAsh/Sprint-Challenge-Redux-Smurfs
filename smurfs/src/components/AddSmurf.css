@@ -32,12 +32,15 @@ button {
     border: none;
     height: 25px;
     margin-top: 5px;
-    color: #FDAAA7;
-    background: #EEFDA7;
-    width: 50%;
+    color: #EEFDA7;
+    background: #9CE6BC;
+    width: 60%;
     font-weight: bold;
+    color: black;   
+    border: 1px solid black;
 }
 
 button:hover {
     background: black;
+    color: #FDAAA7; 
 }

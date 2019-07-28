@@ -50,7 +50,7 @@ class AddSmurf extends React.Component {
                         onChange={this.handleChange}
                         placeholder='HEIGHT'
                     />   
-                    <button>ADD</button>    
+                    <button>ADD SMURF</button>    
                 </form>
             </div>
         )
