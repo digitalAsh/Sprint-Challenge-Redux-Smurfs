@@ -1,5 +1,17 @@
+.App {
+  text-align: center;
+}
+
 body {
-  margin: 0;
-  padding: 0;
+  height: 100%;
+  border: none;
+  background-image: linear-gradient(#C096E3, #B1D6FA, #C096E3);
+  background-repeat: no-repeat;
+  background-position: center;
   font-family: sans-serif;
 }
+
+h1 {
+  text-align: center;
+}
+

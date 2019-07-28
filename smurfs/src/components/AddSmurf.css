@@ -1,0 +1,43 @@
+
+
+.smurf-form {
+    display: flex;
+    justify-content: center;
+
+}
+
+.smurf-inputs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 0;
+}
+
+.inputs {
+    margin-bottom: 5px;
+    background: #FDAAA7;
+    border: none;
+    border-radius: 5px;
+    height: 25px; 
+}
+
+.inputs::placeholder {
+    text-align: center;
+    color: white;
+}
+
+button {
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    margin-top: 5px;
+    color: #FDAAA7;
+    background: #EEFDA7;
+    width: 50%;
+    font-weight: bold;
+}
+
+button:hover {
+    background: black;
+}

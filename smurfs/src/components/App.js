@@ -18,15 +18,24 @@ class App extends Component {
 
   render() {
     return (
-      <div className="smurfs-list">
-        {this.props.smurfs.map( smurf => (
-          <h3 key={smurf.id}>
-            {smurf.name}
-            {smurf.age}
-            {smurf.height}
-          </h3>
-        ))}
+      <div className= 'App'>
+        <h1>Welcome To Smurf Village</h1>
         <AddSmurf />
+          {this.props.smurfs.map( smurf => (
+            <div className= 'smurfs-list'>
+            <h3 key={smurf.id}>
+              <div className='smurf'>
+                <div className='smurf-name'>Smurf:</div> {smurf.name}
+              </div>
+              <div className='smurf'>
+                <div className='smurf-age'>Age:</div>{smurf.age}
+              </div>
+              <div className='smurf'>
+                <div className='smurf-height'>Height:</div> {smurf.height}
+              </div>
+            </h3>
+            </div>
+          ))}
       </div>
     );
   }

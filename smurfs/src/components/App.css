@@ -1,28 +1,41 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.smurfs-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  background: #9CE6BC;
+  border: 5px solid white;
+  border-radius: 25px;
+  width: 50%;
+  color: #330BE3;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.smurf {
+  display: flex;
 }
 
-.App-title {
-  font-size: 1.5em;
+.smurf-name {
+  margin-right: 5%;
+  color: #C096E3;
+  padding-bottom: 10px;
 }
 
-.App-intro {
-  font-size: large;
+.smurf-age {
+  margin-right: 20%;
+  color: #C096E3;
+  padding-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.smurf-height {
+  margin-right: 2%;
+  color: #C096E3;
 }
+
+
