@@ -24,15 +24,45 @@ export const getSmurfs = () => dispatch => {
     });
 };
 
+export const ADD_START = 'ADD_START';
 export const ADD_SMURF = 'ADD_SMURF';
 
-export const addSmurf = smurf => {
-  return {
-    type: ADD_SMURF,
-    payload: smurf
-  };
+export const addSmurf = smurf => dispatch => {
+  dispatch({ type: ADD_START });
+
+  return axios 
+    .post('http://localhost:3333/smurfs', smurf)
+    .then(res => {
+      dispatch({ type: ADD_SMURF, payload: res.data})
+    })
+    .catch(err => console.log(err));
+  
 }
 
+// export const ADD_SMURF = 'ADD_SMURF';
+
+// export const addSmurf = smurf => {
+//   return {
+//     type: ADD_SMURF,
+//     payload: smurf
+//   };
+// }
+export const TOGGLE_SMURF = 'TOGGLE_SMURF'
+
+export function toggleSmurf(index) {
+  return {
+    type: TOGGLE_SMURF,
+    payload: index
+  }
+}
+
+export const DELETE_SMURF = 'DELETE_SMURF'
+
+export function deleteSmurf() {
+  return {
+    type: DELETE_SMURF
+  }
+}
 
 /*
   For this project you'll need at least 2 action creators for the main portion,

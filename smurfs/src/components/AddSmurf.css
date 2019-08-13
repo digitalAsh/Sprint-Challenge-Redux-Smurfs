@@ -14,15 +14,16 @@
     margin-left: 0;
 }
 
-.inputs {
+input {
     margin-bottom: 5px;
     background: #FDAAA7;
     border: none;
     border-radius: 5px;
     height: 25px; 
+    text-align: center;
 }
 
-.inputs::placeholder {
+input::placeholder {
     text-align: center;
     color: white;
 }
@@ -43,4 +44,5 @@ button {
 button:hover {
     background: black;
     color: #FDAAA7; 
+    cursor: pointer;
 }

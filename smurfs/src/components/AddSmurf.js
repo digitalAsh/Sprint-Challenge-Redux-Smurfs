@@ -4,6 +4,7 @@ import { addSmurf } from '../actions';
 import './AddSmurf.css';
 
 class AddSmurf extends React.Component {
+    
                 
          state = {  
             name: '',
@@ -20,30 +21,31 @@ class AddSmurf extends React.Component {
     }
 
     addNew = event => {
-        event.preventDefault()
+        //event.preventDefault()
         this.props.addSmurf(this.state)
         this.setState({ name: '', age: '', height: ''})
+        //setTimeout(() => {this.props.history.push('http://localhost:3000')}, 400)
     }
     
     render() {
         return(
             <div className='smurf-form'>
                 <form onSubmit={this.addNew} className='smurf-inputs'>
-                    <input className='inputs'
+                    <input 
                         type='text'
                         name='name'
                         value={this.state.name}
                         onChange={this.handleChange}
                         placeholder='NAME'
                     />
-                    <input className='inputs'
+                    <input
                         type='text'
                         name='age'
                         value={this.state.age}
                         onChange={this.handleChange}
                         placeholder='AGE'
                     />
-                    <input className='inputs'
+                    <input 
                         type='text'
                         name='height'
                         value={this.state.height}

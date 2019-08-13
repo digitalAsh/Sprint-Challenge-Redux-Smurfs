@@ -5,7 +5,9 @@ import {
   FETCH_DATA_START, 
   FETCH_DATA_SUCCESS,
   FETCH_DATA_FAILURE,
-  ADD_SMURF
+  ADD_SMURF,
+  TOGGLE_SMURF,
+  DELETE_SMURF
 } from '../actions';
 
 
@@ -51,11 +53,27 @@ const reducer = (state = initialState, action) => {
         ...state,
         smurfs: [
           ...state.smurfs,
-            action.payload 
+            action.payload
         ]
-      }   
-    default:
-      return state;     
+      }
+    case TOGGLE_SMURF:
+      return {
+        ...state, 
+        smurfs: state.smurfs.map((smurf, index) =>
+          action.payload === index
+            ? { ...smurf, deleted: !smurf.deleted }
+            : smurf
+        )
+      }  
+
+    case DELETE_SMURF:
+      return {
+        ...state,
+        smurfs: state.smurfs.filter(smurf => !smurf.deleted)
+      }  
+    
+      default:
+        return state;     
   }
 };
 

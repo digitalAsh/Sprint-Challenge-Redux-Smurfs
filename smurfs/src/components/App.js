@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getSmurfs } from '../actions';
+import { getSmurfs, toggleSmurf, deleteSmurf } from '../actions';
 
 import './App.css';
 import AddSmurf from './AddSmurf';
@@ -16,14 +16,21 @@ class App extends Component {
         this.props.getSmurfs();
     }
 
+    toggleSmurf = (event, index) => {
+      event.preventDefault();
+      this.props.toggleSmurf(index);
+      this.props.deleteSmurf(index);
+    }
+
   render() {
     return (
       <div className= 'App'>
         <h1>Welcome To Smurf Village</h1>
         <AddSmurf />
-          {this.props.smurfs.map( smurf => (
-            <div className= 'smurfs-list'>
-            <h3 key={smurf.id}>
+         <div className='smurfs-list'>
+          {this.props.smurfs.map((smurf, index) => (
+            <div className= 'smurfs-card'>
+              <button className='delete-button' onClick={event => this.toggleSmurf(event, index)} key={index}>x</button>
               <div className='smurf'>
                 <div className='smurf-name'>Smurf:</div> {smurf.name}
               </div>
@@ -33,9 +40,9 @@ class App extends Component {
               <div className='smurf'>
                 <div className='smurf-height'>Height:</div> {smurf.height}
               </div>
-            </h3>
             </div>
           ))}
+          </div>   
       </div>
     );
   }
@@ -48,5 +55,5 @@ const mapStateToProps = ({ smurfs, fetchingSmurfs }) => ({
 
 export default connect(
   mapStateToProps,
-  { getSmurfs }
+  { getSmurfs, toggleSmurf, deleteSmurf }
 )( App )
